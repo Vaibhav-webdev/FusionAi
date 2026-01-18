@@ -1,4 +1,7 @@
+"use client"
+
 import React from 'react'
+import { motion, spring } from "framer-motion"
 
 const featuresSection = () => {
   return (
@@ -30,6 +33,7 @@ const featuresSection = () => {
   <div className="flex items-center justify-center flex-wrap gap-6 mt-12 sm:mt-16 max-w-6xl">
     
     {/* Card 1 */}
+    <motion.div initial={{ opacity: 0}} whileInView={{ opacity: 1}} transition={{ duration: 0.6, ease: "easeInOut"}}>
     <div className="flex flex-col text-center items-center justify-center 
       hover:bg-purple-50 transition rounded-xl p-6 border border-violet-200 
       gap-6 w-full sm:w-[300px]"
@@ -49,8 +53,10 @@ const featuresSection = () => {
         </p>
       </div>
     </div>
+      </motion.div>
 
     {/* Card 2 */}
+    <motion.div initial={{ opacity: 0}} whileInView={{ opacity: 1}} transition={{ duration: 1, ease: "easeInOut"}}>
     <div className="flex flex-col text-center items-center justify-center 
       hover:bg-green-50 transition rounded-xl p-6 border border-green-200 
       gap-6 w-full sm:w-[300px]"
@@ -70,8 +76,10 @@ const featuresSection = () => {
         </p>
       </div>
     </div>
+    </motion.div>
 
     {/* Card 3 */}
+    <motion.div initial={{ opacity: 0}} whileInView={{ opacity: 1}} transition={{ duration: 1.2, ease: "easeInOut"}}>
     <div className="flex flex-col text-center items-center justify-center 
       hover:bg-red-50 transition rounded-xl p-6 border border-orange-200 
       gap-6 w-full sm:w-[300px]"
@@ -91,7 +99,7 @@ const featuresSection = () => {
         </p>
       </div>
     </div>
-
+</motion.div>
   </div>
 </section>
 

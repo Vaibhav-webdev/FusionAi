@@ -10,6 +10,7 @@ export async function runGemini(prompt) {
   
   const final_prompt = `You are a professional resume writer. Enhance the following professional summary while:
 - Keeping it in a single paragraph
+- Any Sentence Provided Your Just Convert Into summary paragraph under 40-50 words
 - Limit the enhanced summary to 45–50 words
 - Maintaining almost the same length (do not make it longer)
 - Using similar wording and tone

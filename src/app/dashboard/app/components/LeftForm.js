@@ -196,10 +196,10 @@ export default function LeftForm(props) {
 
         <div className="flex gap-5">
           {prev && <button onClick={handlePrev} className="flex cursor-pointer hover:text-gray-900 items-center gap-1 text-sm text-gray-700">
-            <ChevronLeft size={16} /> Previous
+            <ChevronLeft size={16} /> <span className="hidden lg:flex">Previous</span>
           </button>}
           {next && <button onClick={handleNext} className="flex cursor-pointer hover:text-gray-900 items-center gap-1 text-sm text-gray-700">
-            Next <ChevronRight size={16} />
+            <span className="hidden lg:flex">Next</span> <ChevronRight size={16} />
           </button>}
         </div>
       </div>
@@ -315,7 +315,7 @@ export default function LeftForm(props) {
           achievements and skills.
         </p>
       </div>}
-      {show === 2 && <div className='px-8 py-3'>
+      {show === 2 && <div className='px-4 lg:px-8 py-3'>
         <div className="flex py-4 items-start justify-between">
           <div>
             <h2 className="text-lg font-semibold">Professional Experience</h2>
@@ -441,7 +441,7 @@ export default function LeftForm(props) {
         </div>
       </div>}
       {show === 3 && (
-        <div className="p-8 space-y-6">
+        <div className="p-4 lg:p-8 space-y-6">
           {/* Header */}
           <div className="flex items-start justify-between">
             <div>
@@ -598,7 +598,7 @@ export default function LeftForm(props) {
         </div>
       )}
       {show === 5 && (
-        <div className="p-6 space-y-6">
+        <div className="p-4 lg:p-6 space-y-6">
           {/* Header */}
           <div>
             <h2 className="text-lg font-semibold">Skills</h2>
@@ -610,7 +610,7 @@ export default function LeftForm(props) {
           {/* Input */}
           <div className="flex gap-2">
             <input
-              className="flex-1 border rounded-md px-3 py-2 text-sm"
+              className="flex-1 border rounded-md px-2 lg:px-3 py-2 text-sm"
               placeholder="Enter a skill (e.g., JavaScript, Project Management)"
               value={skillInput}
               onChange={(e) => setSkillInput(e.target.value)}
@@ -641,7 +641,7 @@ export default function LeftForm(props) {
           <div className="text-blue-800 py-3 rounded px-3 bg-blue-100 text-sm"><span className="font-semibold">Tip:</span> Add 8-12 relevant skills. Include both technical skills (programming languages, tools) and soft skills (leadership, communication).</div>
         </div>
       )}
-      <div onClick={Main} className="flex justify-center pb-4 sm:pb-5">
+      <div onClick={Main} className="flex justify-center px-6 pb-4 sm:pb-5">
         <button
           className="
       flex items-center justify-center gap-2
@@ -651,10 +651,10 @@ export default function LeftForm(props) {
       text-green-600 bg-green-200
       cursor-pointer
       py-2.5 sm:py-3
-      px-6 sm:px-10 md:px-16 lg:px-24
+      px-12 sm:px-10 md:px-16 lg:px-24
       transition duration-150 ease-in
       rounded
-      w-full sm:w-auto
+      w-full
     "
         >
           Save Changes
