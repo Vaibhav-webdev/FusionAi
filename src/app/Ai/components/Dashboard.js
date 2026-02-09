@@ -56,12 +56,12 @@ const updateUser = async (cre) => {
       <Sidebar />
       {show === 0 && <Dash credits={credits} plan={plan} creations={creations} />}
       {show === 1 && <ArticleGenerator setRender={setRender} credits={credits} updateUser={updateUser}/>}
-      {show === 2 && <BlogGenerator credits={credits} updateUser={updateUser}/>}
-      {show === 3 && <ImageGenerator credits={credits} updateUser={updateUser}/>}
-      {show === 4 && <BackgroundRemoval credits={credits} updateUser={updateUser}/>}
-      {show === 5 && <ObjectRemoval credits={credits} updateUser={updateUser}/>}
-      {show === 6 && <YoutubeGenerator credits={credits} updateUser={updateUser}/>}
-      {show === 7 && <EmailGenerator credits={credits} updateUser={updateUser}/>}
+      {show === 2 && <BlogGenerator setRender={setRender} credits={credits} updateUser={updateUser}/>}
+      {show === 3 && <ImageGenerator setRender={setRender} credits={credits} updateUser={updateUser}/>}
+      {show === 4 && <BackgroundRemoval setRender={setRender} credits={credits} updateUser={updateUser}/>}
+      {show === 5 && <ObjectRemoval setRender={setRender} credits={credits} updateUser={updateUser}/>}
+      {show === 6 && <YoutubeGenerator setRender={setRender} credits={credits} updateUser={updateUser}/>}
+      {show === 7 && <EmailGenerator setRender={setRender} credits={credits} updateUser={updateUser}/>}
     </div>
   );
 }
