@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
   },
   credits: {
     type: Number,
-    default: 10, // free trial credits
+    default: 5, // free trial credits
     min: 0,
   },
   creations: {
