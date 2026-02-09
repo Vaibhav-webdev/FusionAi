@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+* {
+  font-family: 'Poppins', sans-serif;
+}
+::selection {
+  background: #69c3ff;
+  color: #ffffff;
+}
 @custom-variant dark (&:is(.dark *));
 h {
   background-color: red;

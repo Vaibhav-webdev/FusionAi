@@ -16,7 +16,7 @@ export async function DELETE(req) {
     },
     {
       $pull: {
-        resumes: { _id: id },
+        thumbnails: { _id: id },
       },
     }
   );

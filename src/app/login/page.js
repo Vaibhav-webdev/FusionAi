@@ -38,7 +38,7 @@ export default function LoginPage() {
       toast.error("Invalid Email or Password!")
     } else {
       toast.success("Login Successfully!")
-      router.push("/dashboard")
+      router.push("/Ai")
     }
   }
 
@@ -60,19 +60,12 @@ export default function LoginPage() {
   }
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-700 min-h-screen">
-      <div className="flex flex-col items-center justify-center px-6 py-12 pb-16 mx-auto">
-        {/* Logo */}
-        <div className="flex items-center mb-6 text-2xl font-semibold text-gray-700 dark:text-white">
-          <div className="w-8 h-8 mr-2 rounded bg-green-600 flex items-center justify-center text-white font-bold">
-            R
-          </div>
-          Resume.
-        </div>
-
+    <section className="bg-white dark:bg-gray-700 pt-12 h-screen relative">
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-purple-500 rounded-full blur-[250px] opacity-40"></div>
+      <div className="flex flex-col items-center justify-center py-12 pb-16">
         {/* Card */}
-        <div className="w-full bg-white rounded-xl shadow-lg sm:max-w-md dark:bg-gray-800 dark:border dark:border-gray-700">
-          <div className="p-6 space-y-6 sm:p-8">
+        <div className="w-90 z-20 bg-white border-2 rounded-xl shadow-lg sm:max-w-md dark:bg-gray-800 dark:border dark:border-gray-700">
+          <div className="space-y-6 sm:p-8">
             <h1 className="text-xl font-bold tracking-tight text-gray-700 md:text-2xl dark:text-white">
               {isSignup ? "Create your account" : "Sign in to your account"}
             </h1>
@@ -122,7 +115,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={isSignup ? handleSignup : handleLogin}
-                className="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-indigo-300 font-semibold rounded-lg text-sm px-5 py-2.5 transition"
+                className="w-full text-white bg-black hover:bg-gray-300 hover:text-black focus:ring-4 focus:ring-indigo-300 cursor-pointer font-semibold rounded-lg text-sm px-5 py-2.5 transition duration-200"
               >
                 {isSignup ? "Create Account" : "Sign in"}
               </button>
@@ -163,9 +156,9 @@ export default function LoginPage() {
               </div>
               <div className="flex gap-3">
                 <button
-                  onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+                  onClick={() => signIn("google", { callbackUrl: "/Ai" })}
                   type="button"
-                  className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600"
+                  className="flex cursor-pointer items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600"
                 >
                   <Image
                     width={22}
@@ -177,9 +170,9 @@ export default function LoginPage() {
                 </button>
 
                 <button
-                  onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
+                  onClick={() => signIn("github", { callbackUrl: "/Ai" })}
                   type="button"
-                  className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600"
+                  className="flex items-center cursor-pointer justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600"
                 >
                   <Image
                     width={22}
@@ -194,6 +187,7 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500 rounded-full blur-[250px] opacity-40"></div>
     </section>
   );
 }

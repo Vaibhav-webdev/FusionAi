@@ -1,144 +1,57 @@
-"use client"
+"use client";
 
-import { useRouter } from "next/navigation";
-import { Menu } from "lucide-react";
-import { X } from "lucide-react"
-import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import React from 'react'
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id)
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    })
-  }
+const Navbar = () => {
   const router = useRouter()
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-  <nav className="w-full bg-green-100 px-10 sm:px-8 md:px-16 py-4 flex items-center justify-between relative">
-      
-      {/* Logo */}
-      <div className="text-2xl sm:text-3xl md:text-4xl font-bold">
-        resume<span className="text-green-500">.</span>
+    <nav className="z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-32 backdrop-blur text-slate-800 text-sm dark:bg-black/70">
+      <div className="w-40 h-14 relative">
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          fill
+          className="object-contain"
+        />
       </div>
 
-      {/* Desktop Nav Links */}
-      <ul className="hidden md:flex items-center gap-8 text-gray-600">
-        <li>
-          <Link href="#" className="hover:text-green-600">
-            Home
-          </Link>
-        </li>
-        <li>
-          <button
-            onClick={() => scrollToSection("feature")}
-            className="hover:text-green-600"
-          >
-            Features
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => scrollToSection("testimonial")}
-            className="hover:text-green-600"
-          >
-            Testimonials
-          </button>
-        </li>
-        <li>
-          <Link href="/contact" className="hover:text-green-600">
-            Contact
-          </Link>
-        </li>
-      </ul>
-
-      {/* Desktop Actions */}
-      <div className="hidden md:flex items-center gap-4">
-        <button
-          onClick={() => router.push("/dashboard")}
-          className="px-5 py-3 rounded-full bg-green-500 text-white font-medium hover:bg-green-600 transition"
-        >
-          Get started
-        </button>
-        <button
-          onClick={() => router.push("/login")}
-          className="px-7 py-3 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
-        >
-          Login
-        </button>
+      <div className="hidden md:flex items-center gap-8">
+        <Link href="#" className="hover:text-slate-500">Home</Link>
+        <Link href="#products" className="hover:text-slate-500">Products</Link>
+        <Link href="#reviews" className="hover:text-slate-500">Reviews</Link>
+        <Link href="#pricing" className="hover:text-slate-500">Pricing</Link>
       </div>
 
-      {/* Hamburger Button (Mobile) */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="md:hidden text-gray-700"
-      >
-        {open ? <X size={28} /> : <Menu size={28} />}
+      <button onClick={() => {
+        router.push("/Ai")
+      }} className="hidden md:block px-6 py-2.5 text-white bg-indigo-600 hover:bg-indigo-700 rounded-full">
+        Request free trial
       </button>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden z-50">
-          <ul className="flex flex-col gap-4 px-6 py-6 text-gray-700">
-            <li>
-              <Link href="#" onClick={() => setOpen(false)}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  scrollToSection("feature");
-                  setOpen(false);
-                }}
-              >
-                Features
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  scrollToSection("testimonial");
-                  setOpen(false);
-                }}
-              >
-                Testimonials
-              </button>
-            </li>
-            <li>
-              <Link href="/contact" onClick={() => setOpen(false)}>
-                Contact
-              </Link>
-            </li>
+      <div
+        className={`fixed inset-0 z-[100] bg-white/60 backdrop-blur flex flex-col items-center justify-center gap-8 text-lg transition-transform duration-300
+                ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
+      >
+        <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link href="/products" onClick={() => setMenuOpen(false)}>Products</Link>
+        <Link href="/stories" onClick={() => setMenuOpen(false)}>Stories</Link>
+        <Link href="/pricing" onClick={() => setMenuOpen(false)}>Pricing</Link>
 
-            {/* Divider */}
-            <hr className="my-2" />
-
-            {/* Mobile Actions */}
-            <button
-              onClick={() => {
-                router.push("/dashboard");
-                setOpen(false);
-              }}
-              className="w-full py-3 rounded-full bg-green-500 text-white font-medium"
-            >
-              Get started
-            </button>
-            <button
-              onClick={() => {
-                router.push("/login");
-                setOpen(false);
-              }}
-              className="w-full py-3 rounded-full border border-gray-300"
-            >
-              Login
-            </button>
-          </ul>
-        </div>
-      )}
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="bg-slate-100 hover:bg-slate-200 rounded-md p-2"
+        >
+          ✕
+        </button>
+      </div>
     </nav>
-  );
+  )
 }
+
+export default Navbar

@@ -14,7 +14,6 @@ export async function POST(req) {
       name: name,
       email: email,
       password: hashedPassword,
-      resumes: []
     });
 
     return NextResponse.json({

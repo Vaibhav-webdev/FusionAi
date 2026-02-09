@@ -1,20 +1,22 @@
-import Navbar from "./components/navbar";
-import HeroSection from "./components/heroSection"
-import FeaturesSection from "./components/featuresSection";
-import Marquee from "./components/Marquee"
-import Questions from "./components/questions";
-import CallToAction from "./components/call_to_action";
+import Navbar from "./components/navbar.js";
+import HeroSection from "./components/heroSection";
+import AIToolsSection from "./components/AIToolsSection"
 import Footer from "./components/footer";
+import Testimonials from "./components/Testimonial.js";
+import Faq from "./components/Faq.js";
+import Cta from "./components/CallToAction.js";
+import Pricing from "./components/Pricing.js";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <HeroSection />
-      <FeaturesSection />
-      <Marquee />
-      <CallToAction />
-      <Questions />
+      <AIToolsSection />
+      <Pricing />
+      <Cta />
+      <Testimonials />
+      <Faq />
       <Footer />
     </>
   );

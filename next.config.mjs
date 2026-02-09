@@ -2,7 +2,7 @@
 const nextConfig = {
   /* config options here */
   images: {
-    domains: ["ik.imagekit.io"],
+    domains: ["raw.githubusercontent.com", "images.unsplash.com", "res.cloudinary.com"],
   },
   reactCompiler: true,
 };

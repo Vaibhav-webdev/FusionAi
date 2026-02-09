@@ -24,7 +24,9 @@ export async function GET() {
 
     return NextResponse.json({
       success: true,
-      resumes: user.resumes
+      credits: user.credits,
+      plan: user.plan,
+      creations: user.creations
     });
 
   } catch (error) {

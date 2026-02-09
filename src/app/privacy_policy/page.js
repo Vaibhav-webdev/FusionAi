@@ -2,17 +2,17 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div className="mt-10 lg:mt-16 px-4 sm:px-6 md:px-10 lg:px-14 pb-20">
-  <div className="flex flex-col gap-10">
-
+        <div className="bg-black px-4 sm:px-6 md:px-10 lg:px-14 pb-20">
+  <div className="flex pt-22 relative flex-col gap-10">
+<div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-purple-500 rounded-full blur-[250px] opacity-40"></div>
     {/* Privacy Policy Header */}
-    <div className="bg-gray-100 rounded-xl py-7 sm:py-9 px-5 sm:px-9">
+    <div className="bg-gray-100 z-20 rounded-xl py-7 sm:py-9 px-5 sm:px-9">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Privacy Policy</h2>
       <p className="text-gray-700 mt-5 text-base sm:text-lg">
         Last updated: <b className="text-black">26/1/2026</b>
       </p>
       <p className="text-gray-700 mt-5 text-base sm:text-lg">
-        This Privacy Policy describes how <b className="text-black">[Resume.com], Owner [Vaibhav Shukla]</b> (“we”, “our”, “us”) collects, uses, stores, and protects your information when you visit or interact with our website. This website is created as a demo e-commerce project for learning and portfolio purposes only. By using this website, you agree to the terms described in this Privacy Policy.
+        This Privacy Policy describes how <b className="text-black">[FusionAi.com], Owner [Vaibhav Shukla]</b> (“we”, “our”, “us”) collects, uses, stores, and protects your information when you visit or interact with our website. This website is created as a demo e-commerce project for learning and portfolio purposes only. By using this website, you agree to the terms described in this Privacy Policy.
       </p>
       <p className="text-gray-700 mt-5 text-base sm:text-lg">
         We use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection and use of information in accordance with this policy.
@@ -20,7 +20,7 @@ const page = () => {
     </div>
 
     {/* Information We Collect */}
-    <div className="bg-gray-100 rounded-xl py-7 sm:py-9 px-5 sm:px-9">
+    <div className="bg-gray-100 z-20 rounded-xl py-7 sm:py-9 px-5 sm:px-9">
       <h2 className="text-xl sm:text-2xl lg:text-2xl font-bold">Information We Collect</h2>
       <p className="text-gray-700 mt-5 text-base sm:text-lg">
         We may collect certain information from users in order to demonstrate typical e-commerce website functionality.
@@ -89,7 +89,7 @@ const page = () => {
       </p>
       <p className="mt-4 text-base sm:text-lg">
         Email: <b>[your-email@example.com]</b> <br />
-        Website: <b>[Voltix.com]</b>
+        Website: <b>[Zenix.com]</b>
       </p>
     </div>
 
