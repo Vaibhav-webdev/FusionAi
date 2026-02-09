@@ -7,7 +7,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Preview from "./Preview";
 
-export default function ObjectRemoval({ updateUser, credits, setRender }) {
+export default function ObjectRemoval({ updateUser, credits, refresh }) {
   const [file, setFile] = useState(null);
   const [prompt, setPrompt] = useState("");
   const [resultImage, setResultImage] = useState(null);
@@ -41,8 +41,7 @@ export default function ObjectRemoval({ updateUser, credits, setRender }) {
     }
     updateUser(10)
     setLoading(false);
-    setRender(false)
-    setRender(true)
+    refresh()
   }
 
   return (

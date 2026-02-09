@@ -7,7 +7,7 @@ import Preview from "./Preview";
 import { toast } from "sonner";
 import { FiEdit } from "react-icons/fi";
 
-export default function ArticleGenerator({ updateUser, credits, setRender }) {
+export default function ArticleGenerator({ updateUser, credits, refresh }) {
   const [length, setLength] = useState("short");
   const [show, setShow] = useState(false)
   const [topic, setTopic] = useState("")
@@ -121,11 +121,10 @@ const normalizeArticle = (text) => {
     updateUser(5)
     setLoading(false)
     setArticle(data.text)
-    setRender(false)
-    setRender(true)
     setTopic("")
     setLength("short")
     setShow(true)
+    refresh()
   }
   return (
     <section className="w-full bg-slate-50 h-screen flex justify-center p-6 overflow-hidden">

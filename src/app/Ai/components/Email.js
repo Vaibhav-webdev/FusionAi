@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import Preview from "./Preview";
 import { FiHash } from "react-icons/fi";
 
-export default function EmailGenerator({ updateUser, credits, setRender }) {
+export default function EmailGenerator({ updateUser, credits, refresh }) {
     const [topic, setTopic] = useState("")
     const [email, setEmail] = useState(null)
     const [tone, setTone] = useState("Professional");
@@ -131,13 +131,12 @@ export default function EmailGenerator({ updateUser, credits, setRender }) {
         }
         main(data.text)
         updateUser(5)
-        setRender(false)
-        setRender(true)
         setLoading(false)
         setShow(true)
         setTopic("")
         setTone("Professional")
         setAddi("")
+        refresh()
     }
     return (
         <section className="w-full bg-slate-50 flex justify-center p-6">

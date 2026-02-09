@@ -8,7 +8,7 @@ import Preview from "./Preview";
 import { toast } from "sonner";
 import { FiType } from "react-icons/fi";
 
-export default function YoutubeGenerator({ updateUser, credits, setRender }) {
+export default function YoutubeGenerator({ updateUser, credits, refresh }) {
   const [style, setStyle] = useState("Catchy")
   const [titles, setTitles] = useState(null)
   const [topic, setTopic] = useState("")
@@ -19,6 +19,7 @@ export default function YoutubeGenerator({ updateUser, credits, setRender }) {
   async function handleClick() {
     if (credits < 5) {
       toast.error("Don't have enough Credits")
+      return
     }
     setLoading(true)
     setShow(false)
@@ -51,8 +52,7 @@ export default function YoutubeGenerator({ updateUser, credits, setRender }) {
     setTopic("")
     setStyle("Catchy")
     setPlatform("Youtube")
-    setRender(false)
-    setRender(true)
+    refresh()
   }  
   return (
     <section className="w-full bg-slate-50 flex justify-center p-6">

@@ -7,7 +7,7 @@ import { Edit3, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-export default function ImageGenerator({ updateUser, credits, setRender }) {
+export default function ImageGenerator({ updateUser, credits, refresh }) {
   const [style, setStyle] = useState("Realistic");
   const [prompt, setPrompt] = useState("");
   const [show, setShow] = useState(false);
@@ -36,8 +36,7 @@ export default function ImageGenerator({ updateUser, credits, setRender }) {
     updateUser(10)
     setShow(true)
     setLoading(false);
-    setRender(false)
-    setRender(true)
+    refresh()
   }
   return (
     <section className="w-full bg-slate-50 flex justify-center p-6">

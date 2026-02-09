@@ -8,7 +8,7 @@ import Image from "next/image";
 import Preview from "./Preview";
 import { toast } from "sonner";
 
-export default function BackgroundRemoval({ updateUser, credits, setRender }) {
+export default function BackgroundRemoval({ updateUser, credits, refresh }) {
   const [fileName, setFileName] = useState("No file chosen");
   const [file, setFile] = useState(null);
   const [show, setShow] = useState(false);
@@ -49,10 +49,9 @@ const fileToBase64 = (file) =>
 
     const data = await res.json();
     updateUser(10)
-    setRender(false)
-    setRender(true)
     setImage(data.url);
     setLoading(false);
+    refresh()
   };
   return (
     <section className="w-full bg-slate-50 flex justify-center p-6">

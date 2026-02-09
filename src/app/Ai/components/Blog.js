@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { FiHash } from "react-icons/fi";
 import Preview from "./Preview";
 
-export default function BlogGenerator({ updateUser, credits, setRender }) {
+export default function BlogGenerator({ updateUser, credits, refresh }) {
   const [category, setCategory] = useState("General");
   const [topic, setTopic] = useState("")
   const [keywords, setKeywords] = useState(null)
@@ -46,9 +46,8 @@ export default function BlogGenerator({ updateUser, credits, setRender }) {
     setLoading(false)
     setShow(true)
     setTopic("")
-    setRender(false)
-    setRender(true)
     setCategory("General")
+    refresh()
   }
 
   return (
