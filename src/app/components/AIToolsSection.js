@@ -19,9 +19,9 @@ const tools = [
     color: "bg-sky-500",
   },
   {
-    title: "Blog Title Generator",
+    title: "Title Generator",
     description:
-      "Find the perfect, catchy title for your blog posts with our AI-powered generator.",
+      "Find the perfect, catchy title for your social media posts with our AI-powered generator.",
     icon: Hash,
     color: "bg-pink-500",
   },
@@ -47,9 +47,9 @@ const tools = [
     color: "bg-indigo-500",
   },
   {
-    title: "Resume Reviewer",
+    title: "Email Writer",
     description:
-      "Get your resume reviewed by AI to improve your chances of landing your dream job.",
+      "Get your email reviewed by AI to improve your chances of landing your dream job.",
     icon: FileText,
     color: "bg-teal-500",
   },
