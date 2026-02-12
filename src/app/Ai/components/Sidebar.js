@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LogOut } from "lucide-react";
 import {
@@ -105,7 +106,8 @@ export default function Sidebar() {
           </div>
         </div>
         <div onClick={() => {
-          signOut({ redirect: true, callbackUrl: "/login" })
+          signOut({ redirect: false })
+          router.push("https://fusionai-dusky.vercel.app/login")
         }} className="hover:bg-gray-200 cursor-pointer rounded-full p-1">
           <LogOut size={20} className="text-gray-700" />
         </div>
