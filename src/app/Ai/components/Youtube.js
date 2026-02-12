@@ -45,6 +45,22 @@ export default function YoutubeGenerator({ updateUser, credits, refresh }) {
       }
       setTitles(parsedKeywords)
     }
+    
+    await fetch("/api/add2", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        category: "TitleGen", // ⚠️ ArticleGen nahi — yahan TitleGen hona chahiye
+        data: {
+          topic,
+          style,
+          platform,
+        }
+      })
+    });
+
     updateUser(5)
     main(data.text)
     setLoading(false)

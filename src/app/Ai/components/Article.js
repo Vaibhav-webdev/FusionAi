@@ -102,6 +102,7 @@ const normalizeArticle = (text) => {
   async function handleClick() {
     if (credits < 5) {
       toast.error("Don't have enough Credits!")
+      console.log(credits)
       return
     }
     setLoading(true)
@@ -118,6 +119,20 @@ const normalizeArticle = (text) => {
       })
     })
     const data = await response.json()
+
+    await fetch("/api/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        category: "ArticleGen", // ⚠️ ArticleGen nahi — yahan TitleGen hona chahiye
+        data: {
+          topic,
+          length,
+        }
+      })
+    });
     updateUser(5)
     setLoading(false)
     setArticle(data.text)

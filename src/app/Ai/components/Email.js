@@ -104,6 +104,7 @@ export default function EmailGenerator({ updateUser, credits, refresh }) {
     async function handleClick() {
         if (credits < 5) {
             toast.error("Don't have enough Credits")
+            return
         }
         setLoading(true)
         setShow(false)
@@ -129,6 +130,21 @@ export default function EmailGenerator({ updateUser, credits, refresh }) {
             }
             setEmail(parsedKeywords)
         }
+
+        await fetch("/api/add2", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        category: "EmailWriter", // ⚠️ ArticleGen nahi — yahan TitleGen hona chahiye
+        data: {
+          describe: topic,
+          tone,
+          additional,
+        }
+      })
+    });
         main(data.text)
         updateUser(5)
         setLoading(false)

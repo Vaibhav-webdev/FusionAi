@@ -35,6 +35,7 @@ const fileToBase64 = (file) =>
   const handleRemoveBg = async () => {
     if (credits < 5) {
       toast.error("Don't have enough Credits")
+      return
     }
     if (!file) return alert("Please select an image");
 

@@ -22,7 +22,7 @@ export async function GET() {
 
     const user = await User.findOne({ email });
 
-    return NextResponse.json({ user });
+    return NextResponse.json({ TotalCreation: user.AllCreation });
 
   } catch (error) {
     return NextResponse.json(

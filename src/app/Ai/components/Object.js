@@ -16,6 +16,7 @@ export default function ObjectRemoval({ updateUser, credits, refresh }) {
   async function submit() {
     if (credits < 5) {
       toast.error("Don't have enough Credits")
+      return
     }
     if (!file || !prompt.trim()) {
       alert("Image aur prompt dono chahiye");

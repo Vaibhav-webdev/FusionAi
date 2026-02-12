@@ -18,6 +18,7 @@ export default function BlogGenerator({ updateUser, credits, refresh }) {
   async function handleClick() {
     if (credits < 5) {
       toast.error("Don't have enough Credits")
+      return
     }
     setLoading(true)
     setShow(false)
@@ -41,6 +42,20 @@ export default function BlogGenerator({ updateUser, credits, refresh }) {
       }
       setKeywords(parsedKeywords)
     }
+
+    await fetch("/api/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        category: "KeywordGen", // ⚠️ ArticleGen nahi — yahan TitleGen hona chahiye
+        data: {
+          topic,
+          style: category,
+        }
+      })
+    });
     updateUser(5)
     main(data.text)
     setLoading(false)

@@ -17,6 +17,7 @@ export default function ImageGenerator({ updateUser, credits, refresh }) {
   async function generateImage() {
     if (credits < 5) {
       toast.error("Don't have enough Credits")
+      return
     }
     setLoading(true);
     setImage(null);
